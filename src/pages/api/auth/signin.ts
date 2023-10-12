@@ -8,6 +8,8 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
   const password = formData.get("password")?.toString();
   const provider = formData.get("provider")?.toString();
 
+console.log(import.meta.env.VERCEL_ENV)
+
   if (provider) {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: provider as Provider,
