@@ -1,6 +1,9 @@
 ---
+import AstroIcon from "../icons/AstroIcon.astro";
 import Base from "../layout/Base.astro";
 const { email } = Astro.locals;
+
+const foo = JSON.stringify(Astro.context());
 ---
 
 <Base title="Dashboard">
@@ -9,6 +12,9 @@ const { email } = Astro.locals;
   >
     {email}
   </p>
+ <pre>
+    {foo}
+ </pre>
   <p class="max-w-prose text-lg dark:text-zinc-100">
     This is a protected page. You can only see this if you are logged in.
   </p>
