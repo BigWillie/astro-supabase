@@ -4,10 +4,10 @@ import { supabase } from "../lib/supabase";
 import Base from "../layout/Base.astro";
 const { email } = Astro.locals;
 
-const { data, error } = await supabase.auth.session
+const d = await supabase.auth.session
 
-const d = JSON.stringify(data, null, 2);
-const e = JSON.stringify(error, null, 2);
+const d = JSON.stringify(d, null, 2);
+const e = null
 ---
 
 <Base title="Dashboard">
