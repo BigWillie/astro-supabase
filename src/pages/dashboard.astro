@@ -3,7 +3,7 @@ import AstroIcon from "../icons/AstroIcon.astro";
 import Base from "../layout/Base.astro";
 const { email } = Astro.locals;
 
-const foo = JSON.stringify(Astro.context());
+const foo = JSON.stringify(Astro.locals, null, 2);
 ---
 
 <Base title="Dashboard">
