@@ -16,7 +16,7 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
         redirectTo: process.env.VERCEL_ENV === "development"
           ? "http://localhost:4321/api/auth/github"
           : // Change this to your production URL
-          "https://astro-supabase-oesw4u4pe-bigwillie.vercel.app/api/auth/github",
+          "https://astro-supabase-ashen.vercel.app//api/auth/github",
       },
     });
 
