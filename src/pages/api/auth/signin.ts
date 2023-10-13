@@ -13,7 +13,10 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: provider as Provider,
       options: {
-        redirectTo: "https://" + process.env.VERCEL_URL + "/api/auth/github",
+        redirectTo: process.env.VERCEL_ENV === "development"
+          ? "http://example:4321/api/auth/github"
+          : // Change this to your production URL
+          "https://" + process.env.VERCEL_URL + "/api/auth/github",
       },
     });
 
