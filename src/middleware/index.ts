@@ -24,6 +24,11 @@ export const onRequest = defineMiddleware(
       }
 
       locals.email = data.user?.email!;
+      cookies.set("session", data?.session, {
+        sameSite: "strict",
+        path: "/",
+        secure: true,
+      });
       cookies.set("sb-access-token", data?.session?.access_token!, {
         sameSite: "strict",
         path: "/",
