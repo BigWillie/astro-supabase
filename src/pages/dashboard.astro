@@ -4,7 +4,7 @@ import { supabase } from "../lib/supabase";
 import Base from "../layout/Base.astro";
 const { email } = Astro.locals;
 
-const { data, error } = await supabase.auth.getSession().session.user
+const { data, error } = await supabase.auth.session
 
 const d = JSON.stringify(data, null, 2);
 const e = JSON.stringify(error, null, 2);
