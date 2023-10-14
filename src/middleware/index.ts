@@ -22,7 +22,7 @@ export const onRequest = defineMiddleware(
       if (error) {
         return redirect("/signin");
       }
-
+      // either assign the user to locals, or a session cookie.
       locals.email = data.user?.email!;
       cookies.set("session", data?.session, {
         sameSite: "strict",
